@@ -25,7 +25,7 @@ public class telaSplash extends AppCompatActivity {
                 }catch (InterruptedException e){
                     e.printStackTrace();
                 }finally {
-                    Intent intent = new Intent(telaSplash.this, MainActivity.class);
+                    Intent intent = new Intent(telaSplash.this, telaLogin.class);
                     startActivity(intent);
                 }
             }
