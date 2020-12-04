@@ -19,7 +19,7 @@
         tools:ignore="VectorDrawableCompat" />
 
     <EditText
-        android:id="@+id/login4"
+        android:id="@+id/username"
         android:layout_width="300dp"
         android:layout_height="46dp"
         android:hint="Username"
@@ -44,7 +44,7 @@
         app:layout_constraintVertical_bias="0.027" />
 
     <EditText
-        android:id="@+id/senha4"
+        android:id="@+id/senha"
         android:layout_width="300dp"
         android:layout_height="46dp"
         android:hint="Password"
@@ -70,7 +70,7 @@
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/button8"
+        android:id="@+id/bt_login"
         android:layout_width="301dp"
         android:layout_height="56dp"
         android:background="#103DC5"
@@ -89,7 +89,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/login4"
+        app:layout_constraintEnd_toStartOf="@+id/username"
         app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

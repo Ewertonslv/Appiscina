@@ -10,6 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".telaRedefinicaoSenha"></activity>
+        <activity android:name=".MainActivity"></activity>
         <activity android:name=".telaCadastroUsuario" />
         <activity android:name=".telaSplash">
             <intent-filter>
