@@ -15,8 +15,7 @@ public class telaLogin extends AppCompatActivity {
     Button bt_cadastro, bt_login;
     TextView tvRecuperacaoSenha;
 
-    private EditText username;
-    private EditText senha;
+    private EditText username, senha;
 
 
     @Override
@@ -63,7 +62,7 @@ public class telaLogin extends AppCompatActivity {
                     finish();
 
                 }else{
-                    //Toast.makeText(this, "usuário ou senha incorreto!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(telaLogin.this, "Usuário ou senha incorreto!", Toast.LENGTH_LONG).show();
                 }
 
             }
