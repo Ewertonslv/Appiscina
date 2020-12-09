@@ -13,7 +13,9 @@ import android.widget.Toast;
 public class telaCadastroUsuario extends AppCompatActivity {
 
     Button bt_cadastrar;
-    private EditText email, username, password1, password2;
+    private EditText tv_email, tv_username, password1, password2;
+
+    DBHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,9 +26,10 @@ public class telaCadastroUsuario extends AppCompatActivity {
         getSupportActionBar().setHomeButtonEnabled(true);      //Ativar o botão
         getSupportActionBar().setTitle("Cadastro");
 
+        db = new DBHelper(this);
 
-        email =  findViewById(R.id.email);
-        username =  findViewById(R.id.username);
+        tv_email =  findViewById(R.id.tv_email);
+        tv_username =  findViewById(R.id.tv_username);
         password1 =  findViewById(R.id.password1);
         password2 =  findViewById(R.id.password2);
         bt_cadastrar =  findViewById(R.id.bt_cadastrar);
@@ -35,18 +38,19 @@ public class telaCadastroUsuario extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String strEmail = email.getText().toString();
-                String usuario = username.getText().toString();
+                String strEmail = tv_email.getText().toString();
+                String usuario = tv_username.getText().toString();
                 String senha1 = password1.getText().toString();
                 String senha2 = password2.getText().toString();
 
+
                 if(strEmail.isEmpty()){
-                    email.setError("Campo obrigatório");
+                    tv_email.setError("Campo obrigatório");
                     return;
                 }
 
                 else if(usuario.isEmpty()){
-                    username.setError("Campo obrigatório");
+                    tv_username.setError("Campo obrigatório");
                     return;
                 }
 
@@ -64,6 +68,19 @@ public class telaCadastroUsuario extends AppCompatActivity {
                 else if (!senha1.equals(senha2)){
                     Toast.makeText(telaCadastroUsuario.this, "As senhas não correspondem", Toast.LENGTH_LONG).show();
                 }else {
+                    long res = db.criarUtilizador(usuario, senha1, strEmail);
+                    if(res>0){
+                        Toast.makeText(telaCadastroUsuario.this, "Cadastro completo", Toast.LENGTH_LONG).show();
+                        Intent i = new Intent(getApplicationContext(), telaLogin.class);
+                        startActivity(i);
+                    } else {
+                        Toast.makeText(telaCadastroUsuario.this, "Cadastro invalido, tente novamente!", Toast.LENGTH_LONG).show();
+                    }
+
+
+
+
+
                     Intent i = new Intent(getApplicationContext(), telaLogin.class);
                     startActivity(i);
                 }

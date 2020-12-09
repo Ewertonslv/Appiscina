@@ -17,6 +17,8 @@ public class telaLogin extends AppCompatActivity {
 
     private EditText username, senha;
 
+    DBHelper db;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,10 +26,12 @@ public class telaLogin extends AppCompatActivity {
         setContentView(R.layout.activity_tela_login);
         getSupportActionBar().hide();
 
+        db = new DBHelper(this);
+
         bt_login = findViewById(R.id.bt_login);
         bt_cadastro = findViewById(R.id.bt_cadastro);
         tvRecuperacaoSenha = findViewById(R.id.tvRecuperacaoSenha);
-        username =  findViewById(R.id.username);
+        username =  findViewById(R.id.tv_username);
         senha =  findViewById(R.id.senha);
 
         bt_cadastro.setOnClickListener(new View.OnClickListener() {
@@ -50,21 +54,24 @@ public class telaLogin extends AppCompatActivity {
                     return;
                 }
 
-                if(password.isEmpty()){
+                else if(password.isEmpty()){
                     senha.setError("Campo obrigatório");
                     return;
                 }
 
-                if(usuario.equals("ewerton") && (password.equals("123"))) {
-                    Intent i = new Intent(getApplicationContext(), MainActivity.class);
-                    startActivity(i);
 
-                    finish();
-
-                }else{
-                    Toast.makeText(telaLogin.this, "Usuário ou senha incorreto!", Toast.LENGTH_LONG).show();
+                else {
+                    String res = db.validarLogin(usuario, password);
+                    if (res.equals("OK"))
+                    {
+                        Toast.makeText(telaLogin.this, "Login valido!", Toast.LENGTH_LONG).show();
+                        Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                        startActivity(i);
+                        finish();
+                    } else {
+                        Toast.makeText(telaLogin.this, "Login invalido, tente novamente!", Toast.LENGTH_LONG).show();
+                    }
                 }
-
             }
         });
 
