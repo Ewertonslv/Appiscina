@@ -78,11 +78,6 @@ public class telaCadastroUsuario extends AppCompatActivity {
                     }
 
 
-
-
-
-                    Intent i = new Intent(getApplicationContext(), telaLogin.class);
-                    startActivity(i);
                 }
             }
         });

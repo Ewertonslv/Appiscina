@@ -64,7 +64,6 @@ public class telaLogin extends AppCompatActivity {
                     String res = db.validarLogin(usuario, password);
                     if (res.equals("OK"))
                     {
-                        Toast.makeText(telaLogin.this, "Login valido!", Toast.LENGTH_LONG).show();
                         Intent i = new Intent(getApplicationContext(), MainActivity.class);
                         startActivity(i);
                         finish();

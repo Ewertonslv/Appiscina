@@ -9,8 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".telaRedefinicaoSenha"></activity>
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".telaCadastroPropriedade"></activity>
+        <activity android:name=".addPropriedade" />
+        <activity android:name=".telaRedefinicaoSenha" />
+        <activity android:name=".MainActivity" />
         <activity android:name=".telaCadastroUsuario" />
         <activity android:name=".telaSplash">
             <intent-filter>
