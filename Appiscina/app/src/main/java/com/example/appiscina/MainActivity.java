@@ -17,7 +17,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 public class MainActivity extends AppCompatActivity {
 
     ImageView imageView;
-    Button add;
+    Button add, bt_perfil;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,9 +28,18 @@ public class MainActivity extends AppCompatActivity {
         //imageView.setVisibility(View.GONE);
 
         add = findViewById(R.id.add);
+        bt_perfil = findViewById(R.id.bt_perfil);
 
+        bt_perfil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(),telaPerfil.class);
+                startActivity(i);
+            }
+        });
 
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
