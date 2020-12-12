@@ -6,29 +6,87 @@
     android:layout_height="match_parent"
     tools:context=".telaCadastroPropriedade">
 
+    <ImageView
+        android:id="@+id/setaProximo"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_seta_proximo"
+        tools:ignore="VectorDrawableCompat" />
+
     <EditText
-        android:id="@+id/tv_email2"
+        android:id="@+id/tv_username9"
         android:layout_width="300dp"
         android:layout_height="46dp"
-        android:hint="Email"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="24dp"
+        android:hint="Proprietário"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.1"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/tv_email3"
+        android:id="@+id/tv_username13"
         android:layout_width="300dp"
         android:layout_height="46dp"
-        android:hint="Email"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="24dp"
+        android:hint="Localização"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.208"
+        app:layout_constraintTop_toBottomOf="@+id/tv_username12"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/tv_username14"
+        android:layout_width="300dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="24dp"
+        android:hint="Valor (Diária)"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_username13"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/tv_username12"
+        android:layout_width="300dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="24dp"
+        android:hint="Telefone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_username11"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/tv_username11"
+        android:layout_width="300dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="24dp"
+        android:hint="CPF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_username10"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/tv_username10"
+        android:layout_width="300dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="24dp"
+        android:hint="Nome da propriedade (apelido)"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_username9"
         tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>

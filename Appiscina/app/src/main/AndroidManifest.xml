@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".telaCadastroPropriedade"></activity>
+        <activity android:name=".tela2CadastroPropriedade"></activity>
+        <activity android:name=".telaCadastroPropriedade" />
         <activity android:name=".addPropriedade" />
         <activity android:name=".telaRedefinicaoSenha" />
         <activity android:name=".MainActivity" />
