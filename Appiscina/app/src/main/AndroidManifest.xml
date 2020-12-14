@@ -9,21 +9,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".telaPerfil"></activity>
-        <activity android:name=".tela2CadastroPropriedade" />
-        <activity android:name=".telaCadastroPropriedade" />
-        <activity android:name=".addPropriedade" />
-        <activity android:name=".telaRedefinicaoSenha" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".telaCadastroUsuario" />
-        <activity android:name=".telaSplash">
+        <activity android:name=".views.telaPerfil"></activity>
+        <activity android:name=".views.tela2CadastroPropriedade" />
+        <activity android:name=".views.telaCadastroPropriedade" />
+        <activity android:name=".views.addPropriedade" />
+        <activity android:name=".views.telaRedefinicaoSenha" />
+        <activity android:name=".views.MainActivity" />
+        <activity android:name=".views.telaCadastroUsuario" />
+        <activity android:name=".views.telaSplash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".telaLogin">
+        <activity android:name=".views.telaLogin">
             <intent-filter>
                 <action android:name="com.example.appiscina.MAIN" />
 

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground"
+    >
+
+    <androidx.cardview.widget.CardView
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_margin="4dp"
+        android:id="@+id/cv"
+        app:cardCornerRadius="6dp"
+        app:cardElevation="4dp"
+        >
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="0dp">
+
+            <ImageView
+                android:id="@+id/ic_imagem"
+                android:layout_width="130dp"
+                android:layout_height="200dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_imagem">
+
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/favorito"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginRight="4dp"
+                android:background="#00000000"
+                android:src="@drawable/ic_favorito">
+
+            </ImageView>
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="54dp"
+                android:layout_toRightOf="@+id/ic_imagem"
+                android:src="@drawable/ic_localizacao">
+
+            </ImageView>
+
+            <TextView
+                android:id="@+id/nomePropriedade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="140dp"
+                android:layout_marginLeft="140dp"
+                android:layout_marginTop="2dp"
+                android:text="Nome da propriedade"
+                android:textColor="#000000"
+                android:textSize="18dp"
+                android:textStyle="bold">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/diaria"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/nomePropriedade"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="88dp"
+                android:layout_marginRight="16dp"
+                android:layout_toRightOf="@id/ic_imagem"
+                android:text="Valor diaria:"
+                android:textColor="#000000"
+                android:textSize="17dp"
+                android:textStyle="bold">
+                >
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/precoDiaria"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/nomePropriedade"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="125dp"
+                android:layout_marginRight="16dp"
+                android:layout_toRightOf="@id/ic_imagem"
+                android:textColor="#000000"
+                android:textSize="17dp"
+                android:textStyle="bold">
+                >
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/rs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/nomePropriedade"
+                android:layout_marginStart="2dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="125dp"
+                android:layout_marginRight="16dp"
+                android:layout_toEndOf="@+id/precoDiaria"
+                android:layout_toRightOf="@+id/precoDiaria"
+                android:text="R$"
+                android:textColor="#000000"
+                android:textSize="17dp"
+                android:textStyle="bold">
+                >
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/localizacao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/nomePropriedade"
+                android:layout_marginStart="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="31dp"
+                android:layout_marginRight="16dp"
+                android:layout_toRightOf="@id/ic_imagem"
+                android:text="Localização"
+                android:textColor="#000000"
+                android:textSize="16dp">
+
+            </TextView>
+
+
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

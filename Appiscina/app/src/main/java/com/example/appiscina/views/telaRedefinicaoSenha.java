@@ -1,10 +1,12 @@
-package com.example.appiscina;
+package com.example.appiscina.views;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+
+import com.example.appiscina.R;
 
 public class telaRedefinicaoSenha extends AppCompatActivity {
 

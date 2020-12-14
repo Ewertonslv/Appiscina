@@ -1,4 +1,4 @@
-package com.example.appiscina;
+package com.example.appiscina.views;
 
 import android.content.ContentValues;
 import android.content.Context;
