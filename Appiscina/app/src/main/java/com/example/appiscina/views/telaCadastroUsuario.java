@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.appiscina.R;
+import com.example.appiscina.data.DBHelper;
 
 public class telaCadastroUsuario extends AppCompatActivity {
 

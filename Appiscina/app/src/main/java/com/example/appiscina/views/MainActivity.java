@@ -1,16 +1,19 @@
 package com.example.appiscina.views;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.ImageView;
+
 
 import com.example.appiscina.R;
 import com.example.appiscina.adapter.propriedadeAdapter;
@@ -25,6 +28,9 @@ public class MainActivity extends AppCompatActivity {
     Button add, bt_perfil;
     RecyclerView recyclerview;
 
+
+
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +38,10 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("Appiscina");
 
         //imageView.setVisibility(View.GONE);
+
+
+
+
 
         add = findViewById(R.id.add);
         recyclerview = findViewById(R.id.recyclerview);
@@ -41,12 +51,14 @@ public class MainActivity extends AppCompatActivity {
 
         List<propriedade> listaPropriedades = new ArrayList<>();
 
-        propriedade p1 = new propriedade("Ewerton Silva", "Recanto Aráras ", "12345", "99004403", "Barra nova", "100", 0);
-        listaPropriedades.add(p1);
-        propriedade p2 = new propriedade("Alberto gomes", "Céu azul", "12dd345", "9900dd4403", "Nova descoberta", "150", 0);
-        listaPropriedades.add(p2);
-        propriedade p3 = new propriedade("Larissa medeiros", "Lagoa azul", "12dd345", "9900dd4403", "Recreio", "250", 0);
-        listaPropriedades.add(p3);
+//        propriedade p1 = new propriedade(usuario, email, password, "Ewerton Silva", "Recanto Aráras ", "12345", "99004403", "Barra nova", "100", geladeira, freezer, microondas, fogao, churrasqueira, 0);
+//        listaPropriedades.add(p1);
+//        propriedade p2 = new propriedade(usuario, email, password, "Alberto gomes", "Céu azul", "12dd345", "9900dd4403", "Nova descoberta", "150", geladeira, freezer, microondas, fogao, churrasqueira, 1);
+//        listaPropriedades.add(p2);
+//        propriedade p3 = new propriedade(usuario, email, password, "Larissa medeiros", "Lagoa azul", "12dd345", "9900dd4403", "Recreio", "250", geladeira, freezer, microondas, fogao, churrasqueira, 0);
+//        listaPropriedades.add(p3);
+
+
 
         propriedadeAdapter propriedadeAdapter = new propriedadeAdapter(listaPropriedades, this);
 

@@ -1,6 +1,7 @@
 package com.example.appiscina.adapter;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -48,6 +49,13 @@ public class propriedadeAdapter extends RecyclerView.Adapter<propriedadeAdapter.
         holder.nomePropriedade.setText(propriedade.getNomePropriedade());
         holder.localizacao.setText(propriedade.getLocalizacao());
         holder.precoDiaria.setText(propriedade.getDiaria());
+
+
+
+        if(propriedade.getFavorito() == 1){
+            holder.favorito.setColorFilter(Color.RED);
+        }
+
 
 
         //holder.ic_imagem.setImageAlpha(propriedade.ge);
