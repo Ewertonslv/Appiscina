@@ -15,18 +15,18 @@ public class tela2CadastroPropriedade extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela2_cadastro_propriedade);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true); //Mostrar o botão
-        getSupportActionBar().setHomeButtonEnabled(true);      //Ativar o botão
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setTitle("Cadastrar propriedade");
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) { //Botão adicional na ToolBar
+    public boolean onOptionsItemSelected(MenuItem item) {
 
         switch (item.getItemId()) {
-            case android.R.id.home:  //ID do seu botão (gerado automaticamente pelo android, usando como está, deve funcionar
-                startActivity(new Intent(this, telaCadastroPropriedade.class));  //O efeito ao ser pressionado do botão (no caso abre a activity)
-                finishAffinity();  //Método para matar a activity e não deixa-lá indexada na pilhagem
+            case android.R.id.home:
+                startActivity(new Intent(this, telaCadastroPropriedade.class));
+                finishAffinity();
                 break;
             default:break;
         }

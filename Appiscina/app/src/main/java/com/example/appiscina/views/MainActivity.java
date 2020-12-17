@@ -12,6 +12,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
@@ -27,7 +28,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     ImageView imageView;
-    Button add, bt_perfil;
+    Button add, bt_perfil, bt_compartilhar;
     RecyclerView recyclerview;
     private propriedadeDAO PropriedadeDAO;
 
@@ -44,6 +45,8 @@ public class MainActivity extends AppCompatActivity {
         add = findViewById(R.id.add);
         recyclerview = findViewById(R.id.recyclerview);
         bt_perfil = findViewById(R.id.bt_perfil);
+        bt_compartilhar = findViewById(R.id.bt_compartilhar);
+
 
         recyclerview.setLayoutManager(new LinearLayoutManager(this));
         //comenta
@@ -58,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         PropriedadeDAO = propriedadeDAO.getInstance(this);
+
 
         //Comenta
         //List<propriedade> listaPropriedades = PropriedadeDAO.list();
@@ -87,6 +91,12 @@ public class MainActivity extends AppCompatActivity {
             case R.id.bt_perfil:
                 Intent i2 = new Intent(getApplicationContext(), telaPerfil.class);
                 startActivity(i2);
+                return true;
+            case R.id.bt_compartilhar:
+                Intent i3 = new Intent(Intent.ACTION_SEND);
+                i3.setType("text/plain");
+                i3.putExtra(Intent.EXTRA_TEXT, "Compartilhando");
+                startActivity(i3);
                 return true;
 
         }
