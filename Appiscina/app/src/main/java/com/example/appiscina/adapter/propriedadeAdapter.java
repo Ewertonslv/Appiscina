@@ -24,9 +24,12 @@ public class propriedadeAdapter extends RecyclerView.Adapter<propriedadeAdapter.
     private List<propriedade> propriedades;
     private Context context;
 
+    private OnPropriedadeListener onPropriedadeListener;
+
     public propriedadeAdapter(List<propriedade> propriedades, Context context) {
         this.propriedades = propriedades;
         this.context = context;
+        this.onPropriedadeListener = onPropriedadeListener;
     }
 
     @NonNull
@@ -34,7 +37,7 @@ public class propriedadeAdapter extends RecyclerView.Adapter<propriedadeAdapter.
     public propriedadeHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View view = LayoutInflater.from(context).inflate(R.layout.propriedades, parent, false);
-        propriedadeHolder propriedadeHolder = new propriedadeHolder(view);
+        propriedadeHolder propriedadeHolder = new propriedadeHolder(view, onPropriedadeListener);
 
         return propriedadeHolder;
     }
@@ -52,9 +55,9 @@ public class propriedadeAdapter extends RecyclerView.Adapter<propriedadeAdapter.
 
 
 
-        if(propriedade.getFavorito() == 1){
-            holder.favorito.setColorFilter(Color.RED);
-        }
+//        if(propriedade.getFavorito() == 1){
+//            holder.favorito.setColorFilter(Color.RED);
+//        }
 
 
 
@@ -71,6 +74,14 @@ public class propriedadeAdapter extends RecyclerView.Adapter<propriedadeAdapter.
         return propriedades.size();
     }
 
+    public void setItems(List<propriedade> propriedades){
+        this .propriedades = propriedades;
+    }
+
+    public propriedade getItem(int posicao){
+        return propriedades.get(posicao);
+    }
+
     public class propriedadeHolder extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnLongClickListener{
 
 
@@ -79,9 +90,12 @@ public class propriedadeAdapter extends RecyclerView.Adapter<propriedadeAdapter.
         public TextView precoDiaria;
         public ImageView ic_imagem;
         public ImageView favorito;
+        public OnPropriedadeListener onPropriedadeListener;
 
 
-        public propriedadeHolder(View view){
+
+
+public propriedadeHolder(View view, OnPropriedadeListener onPropriedadeListener){
             super(view);
             ic_imagem = view.findViewById(R.id.ic_imagem);
 
@@ -91,13 +105,18 @@ public class propriedadeAdapter extends RecyclerView.Adapter<propriedadeAdapter.
             localizacao = view.findViewById(R.id.localizacao);
             ic_imagem = view.findViewById(R.id.ic_imagem);
 
+            this.onPropriedadeListener = onPropriedadeListener;
+
             view.setOnClickListener(this);
             view.setOnLongClickListener(this);
         }
 
         @Override
         public void onClick(View view) {
-            int pos = getAdapterPosition();
+           // int pos = getAdapterPosition();
+
+            onPropriedadeListener.onPropriedadeClick(getAdapterPosition());
+
             //Toast.makeText(context, "On click "+ pos, Toast.LENGTH_SHORT).show();
         }
 
@@ -107,6 +126,11 @@ public class propriedadeAdapter extends RecyclerView.Adapter<propriedadeAdapter.
             //Toast.makeText(context, "OnLongclick" + pos, Toast.LENGTH_SHORT).show();
             return true;
         }
+    }
+
+    public interface    OnPropriedadeListener{
+        void onPropriedadeClick(int posicao);
+        //void onLivroLongClick(int posicao);
     }
 
 }

@@ -22,21 +22,21 @@ public class DBHelper extends SQLiteOpenHelper {
                 "%s INTEGER, %s INTEGER,%s INTEGER," +
                 "%s INTEGER,%s INTEGER, %s INTEGER)",
                 propriedadeContract.TABLE_NAME,
-                propriedadeContract.Collumns.usuario,
-                propriedadeContract.Collumns.email,
-                propriedadeContract.Collumns.password,
-                propriedadeContract.Collumns.proprietario,
-                propriedadeContract.Collumns.nomePropriedade,
-                propriedadeContract.Collumns.cpf,
-                propriedadeContract.Collumns.telefone,
-                propriedadeContract.Collumns.localizacao,
-                propriedadeContract.Collumns.diaria,
-                propriedadeContract.Collumns.geladeira,
-                propriedadeContract.Collumns.freezer,
-                propriedadeContract.Collumns.microondas,
-                propriedadeContract.Collumns.fogao,
-                propriedadeContract.Collumns.churrasqueira,
-                propriedadeContract.Collumns.mesas
+                propriedadeContract.Columns.usuario,
+                propriedadeContract.Columns.email,
+                propriedadeContract.Columns.password,
+                propriedadeContract.Columns.proprietario,
+                propriedadeContract.Columns.nomePropriedade,
+                propriedadeContract.Columns.cpf,
+                propriedadeContract.Columns.telefone,
+                propriedadeContract.Columns.localizacao,
+                propriedadeContract.Columns.diaria,
+                propriedadeContract.Columns.geladeira,
+                propriedadeContract.Columns.freezer,
+                propriedadeContract.Columns.microondas,
+                propriedadeContract.Columns.fogao,
+                propriedadeContract.Columns.churrasqueira,
+                propriedadeContract.Columns.mesas
     );
 
     public static String SQL_DROP = "DROP TABLE IF EXISTS "+propriedadeContract.TABLE_NAME;
@@ -55,25 +55,26 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL(SQL_DROP);
-        db.execSQL(SQL_CREATE);
+        //Comenta
+//        db.execSQL(SQL_DROP);
+//        db.execSQL(SQL_CREATE);
 
 
 
-
-//        String str = "CREATE Table Utilizador(" +
-//                "usuario TEXT PRIMARY KEY," +
-//                " password TEXT," +
-//                " email TEXT" +
-//                ");";
-//        db.execSQL(str);
+//Comenta
+        String str = "CREATE Table Utilizador(" +
+                "usuario TEXT PRIMARY KEY," +
+                " password TEXT," +
+                " email TEXT" +
+                ");";
+        db.execSQL(str);
     }
 
 
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        //db.execSQL("DROP TABLE IF EXISTS Utilizador");
+        db.execSQL("DROP TABLE IF EXISTS Utilizador");
         onCreate(db);
 
     }

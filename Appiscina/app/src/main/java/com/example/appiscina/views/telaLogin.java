@@ -15,7 +15,7 @@ import com.example.appiscina.data.DBHelper;
 
 public class telaLogin extends AppCompatActivity {
 
-    Button bt_cadastro, bt_login;
+    Button bt_cadastro, bt_login, entrar;
     TextView tvRecuperacaoSenha;
 
     private EditText username, senha;
@@ -30,7 +30,7 @@ public class telaLogin extends AppCompatActivity {
         getSupportActionBar().hide();
 
         db = new DBHelper(this);
-
+        entrar = findViewById(R.id.entrar);
         bt_login = findViewById(R.id.bt_login);
         bt_cadastro = findViewById(R.id.bt_cadastro);
         tvRecuperacaoSenha = findViewById(R.id.tvRecuperacaoSenha);
@@ -44,6 +44,13 @@ public class telaLogin extends AppCompatActivity {
                 startActivity(i);
             }
         });
+        entrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(),MainActivity.class);
+                startActivity(i);
+            }
+        });
 
         bt_login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,7 +59,7 @@ public class telaLogin extends AppCompatActivity {
                 String usuario = username.getText().toString();
                 String password = senha.getText().toString();
 
-                if(usuario.isEmpty()){
+                if(usuario.isEmpty() || usuario.trim().isEmpty()){
                     username.setError("Campo obrigatório");
                     return;
                 }

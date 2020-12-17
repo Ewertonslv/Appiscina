@@ -3,12 +3,12 @@ package com.example.appiscina.data;
 public class propriedadeContract {
     public static final String TABLE_NAME = "pessoa";
 
-    public static final  class Collumns{
+    public static final  class Columns{
         public static final String usuario = "usuario";
         public static final String email = "email";
         public static final String password = "password";
         public static final String proprietario = "proprietario";
-        public static final String nomePropriedade = "nome propriedade";
+        public static final String nomePropriedade = "nomepropriedade";
         public static final String cpf = "cpf";
         public static final String telefone = "telefone";
         public static final String localizacao = "localizacao";

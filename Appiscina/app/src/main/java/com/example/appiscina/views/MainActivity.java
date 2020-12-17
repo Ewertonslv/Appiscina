@@ -1,6 +1,7 @@
 package com.example.appiscina.views;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -18,16 +19,17 @@ import android.widget.ImageView;
 import com.example.appiscina.R;
 import com.example.appiscina.adapter.propriedadeAdapter;
 import com.example.appiscina.dominio.propriedade;
+import com.example.appiscina.data.propriedadeDAO;
 
 import java.util.ArrayList;
 import java.util.List;
-
+//                                                  implements  propriedadeAdapter.OnPropriedadeListener
 public class MainActivity extends AppCompatActivity {
 
     ImageView imageView;
     Button add, bt_perfil;
     RecyclerView recyclerview;
-
+    private propriedadeDAO PropriedadeDAO;
 
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -37,10 +39,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         getSupportActionBar().setTitle("Appiscina");
 
-        //imageView.setVisibility(View.GONE);
-
-
-
 
 
         add = findViewById(R.id.add);
@@ -48,29 +46,27 @@ public class MainActivity extends AppCompatActivity {
         bt_perfil = findViewById(R.id.bt_perfil);
 
         recyclerview.setLayoutManager(new LinearLayoutManager(this));
-
+        //comenta
         List<propriedade> listaPropriedades = new ArrayList<>();
 
-//        propriedade p1 = new propriedade(usuario, email, password, "Ewerton Silva", "Recanto Aráras ", "12345", "99004403", "Barra nova", "100", geladeira, freezer, microondas, fogao, churrasqueira, 0);
-//        listaPropriedades.add(p1);
-//        propriedade p2 = new propriedade(usuario, email, password, "Alberto gomes", "Céu azul", "12dd345", "9900dd4403", "Nova descoberta", "150", geladeira, freezer, microondas, fogao, churrasqueira, 1);
-//        listaPropriedades.add(p2);
-//        propriedade p3 = new propriedade(usuario, email, password, "Larissa medeiros", "Lagoa azul", "12dd345", "9900dd4403", "Recreio", "250", geladeira, freezer, microondas, fogao, churrasqueira, 0);
-//        listaPropriedades.add(p3);
+        propriedade p1 = new propriedade("Ewertonslv", "ewerton@gmail" ,"123","ewerton", "Recanto araras", "", "","Nova descoberta", "200", 1, 2, 2, 1, 1, 100);
+        listaPropriedades.add(p1);
+        propriedade p2 = new propriedade("Ewertonslv", "ewerton@gmail" ,"123","ewerton", "Céu Azul", "", "","Recreio", "100", 1, 2, 2, 1, 1, 100);
+        listaPropriedades.add(p2);
+        propriedade p3 = new propriedade("Ewertonslv", "ewerton@gmail" ,"123","ewerton", "Pedacinho do Céu", "", "","Barra Nova", "150", 1, 2, 2, 1, 1, 100);
+        listaPropriedades.add(p3);
 
 
+        PropriedadeDAO = propriedadeDAO.getInstance(this);
+
+        //Comenta
+        //List<propriedade> listaPropriedades = PropriedadeDAO.list();
 
         propriedadeAdapter propriedadeAdapter = new propriedadeAdapter(listaPropriedades, this);
 
         recyclerview.setAdapter(propriedadeAdapter);
 
-//        bt_perfil.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent i = new Intent(getApplicationContext(),telaPerfil.class);
-//                startActivity(i);
-//            }
-//        });
+
 
     }
 
@@ -86,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.add:
                 Intent i = new Intent(getApplicationContext(), addPropriedade.class);
-                startActivity(i);
+                startActivityForResult(i, 100);
                 return true;
             case R.id.bt_perfil:
                 Intent i2 = new Intent(getApplicationContext(), telaPerfil.class);
@@ -96,4 +92,21 @@ public class MainActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == 100 && resultCode == RESULT_OK){
+
+        }
+    }
+
+//    @Override
+//    public void onPropriedadeClick(int posicao) {
+//
+//        //Intent intent = new Intent(getApplicationContext(),addPropriedade.class);
+//        //intent.putExtra("Livro", propriedadeAdapter.getItem(posicao));
+//        //startActivityForResult(intent, 101);
+//    }
 }

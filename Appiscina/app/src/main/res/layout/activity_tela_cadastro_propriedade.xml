@@ -19,7 +19,7 @@
         tools:ignore="VectorDrawableCompat" />
 
     <EditText
-        android:id="@+id/tv_username9"
+        android:id="@+id/tv_proprietario"
         android:layout_width="300dp"
         android:layout_height="46dp"
         android:layout_marginTop="24dp"
@@ -31,7 +31,7 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/tv_username13"
+        android:id="@+id/tv_localizacao"
         android:layout_width="300dp"
         android:layout_height="46dp"
         android:layout_marginTop="24dp"
@@ -39,11 +39,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_username12"
+        app:layout_constraintTop_toBottomOf="@+id/tv_telefone"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/tv_username14"
+        android:id="@+id/tv_diaria"
         android:layout_width="300dp"
         android:layout_height="46dp"
         android:layout_marginTop="24dp"
@@ -51,11 +51,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_username13"
+        app:layout_constraintTop_toBottomOf="@+id/tv_localizacao"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/tv_username12"
+        android:id="@+id/tv_telefone"
         android:layout_width="300dp"
         android:layout_height="46dp"
         android:layout_marginTop="24dp"
@@ -63,11 +63,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_username11"
+        app:layout_constraintTop_toBottomOf="@+id/tv_cpf"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/tv_username11"
+        android:id="@+id/tv_cpf"
         android:layout_width="300dp"
         android:layout_height="46dp"
         android:layout_marginTop="24dp"
@@ -75,11 +75,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_username10"
+        app:layout_constraintTop_toBottomOf="@+id/tv_nomePropriedade"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/tv_username10"
+        android:id="@+id/tv_nomePropriedade"
         android:layout_width="300dp"
         android:layout_height="46dp"
         android:layout_marginTop="24dp"
@@ -87,6 +87,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_username9"
+        app:layout_constraintTop_toBottomOf="@+id/tv_proprietario"
         tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>
